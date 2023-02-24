@@ -1,9 +1,8 @@
 FROM node:10-alpine as node
-
 WORKDIR /app
-COPY package*.json /app/
+COPY package*.json ./
 RUN npm install
-COPY ./ /app/
+COPY . .
 ARG TARGET=ng-deploy
 RUN npm run ${TARGET}
 
